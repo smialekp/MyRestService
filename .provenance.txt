@@ -98,3 +98,18 @@ version: 0.0.1-SNAPSHOT
 artifact_id: my-rest-service
 project_name: MyRestService
 
+####
+
+# editor info
+name: atomist-project-templates.spring-boot-common-editors.AddDockerMavenPlugin
+group: atomist-project-templates
+artifact: spring-boot-common-editors
+version: 1.8.2
+
+# backing git repo
+repo: atomist-project-templates/spring-boot-common-editors.git
+branch: master
+sha: 01898cc
+
+# parameter values
+

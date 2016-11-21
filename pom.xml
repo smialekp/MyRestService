@@ -65,7 +65,27 @@
 					</execution>
 				</executions>
 			</plugin>
-		</plugins>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.11</version>
+				<configuration>
+					<imageName>{{docker-repo}}/${project.name}</imageName>
+					<dockerDirectory>src/main/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+					<useConfigFile>true</useConfigFile>
+					<imageTags>
+						<imageTag>${project.version}</imageTag>
+					</imageTags>
+				</configuration>
+			</plugin>
+        </plugins>
 	</build>
 
 </project>
